@@ -1,21 +1,22 @@
-function centralController(questionArray){
+function centralControl(questionArray){
     this.questionArray = questionArray;
     this.index = 0;
-    this.scoire = 0;
+    this.score = 0;
+
+}
+
+centralControl.prototype.displayQuestion = function(){
+return this.questionArray[this.index]
+}
+
+centralControl.prototype.icorrectChoice = function(userChoice){
+if(this.displayQuestion().I){
+    this.score++;
+}
+this.index++
 }
 
 
-centralController.prototype.displayQuestion = function(){
-    return this.questionArray[this.index];
-}
-
-centralController.prototype.confirmCorrectAnswer = function(userChoice){
-    if(this.displayQuestion().isCorrectAnswer(userChoice)){
-        this.score++;
-    }
-    this.index++
-}
-
-centralController.prototype.isEnded = function(){
-    return  this.questionArray.length === this.index;
+centralControl.prototype.isEnded= function(){
+    return this.questionArray.length === this.index;
 }

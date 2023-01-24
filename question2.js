@@ -1,9 +1,9 @@
-function questionConstructor(questions, options, choices){
-    this.questions = questions;
-    this.option = options;
-    this.choices = choices;
+function examQuestion(question, choices, answer){
+    this.question = question;
+    this.choices =choices;
+    this.answer = answer;
 }
 
-questionConstructor.prototype.isCorrectAnswer = function(userChoice){
-    return this.choices === userChoice
+examQuestion.prototype.isCorrectAnswer = function(answerChoice){
+   return this.answer === answerChoice
 }
